@@ -14,7 +14,7 @@ public static class GameSettings
         {
             if(defaultGameSettings == null)
             {
-                GameSettingsSystemSettings settings = Resources.Load<GameSettingsSystemSettings>(GameSettingsSystemSettings.SETTINGS_ASSETS_PATH);
+                GameSettingsSystemSettings settings = Resources.Load<GameSettingsSystemSettings>(GameSettingsSystemSettings.SETTINGS_ASSETS_RESOURCES_PATH);
 
                 if(settings != null)
                     defaultGameSettings = Resources.Load<GameSettingsSO>(settings.DefaultGameSettingsResourcesPath);
