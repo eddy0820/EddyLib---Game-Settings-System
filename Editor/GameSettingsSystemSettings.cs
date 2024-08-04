@@ -8,10 +8,10 @@ public class GameSettingsSystemSettings : ScriptableObject
 {
     public const string SETTINGS_ASSETS_PATH = "Assets/Resources/EddyLib/EddyLib.GameSettingsSystem.asset";
 
-    const string DEFAULT_GAME_SETTINGS_PATH = "Assets/Resources/DefaultGameSettings";
+    const string DEFAULT_GAME_SETTINGS_PATH = "DefaultGameSettings";
 
-    [SerializeField] string defaultGameSettingsPath;
-    public string DefaultGameSettingsPath => defaultGameSettingsPath;
+    [SerializeField] string defaultGameSettingsResourcesPath;
+    public string DefaultGameSettingsResourcesPath => defaultGameSettingsResourcesPath;
 
     internal static GameSettingsSystemSettings GetOrCreateSettings()
     {
@@ -19,8 +19,18 @@ public class GameSettingsSystemSettings : ScriptableObject
         
         if(settings == null)
         {
+            if(!AssetDatabase.IsValidFolder("Assets/Resources"))
+            {
+                AssetDatabase.CreateFolder("Assets", "Resources");
+            }
+
+            if(!AssetDatabase.IsValidFolder("Assets/Resources/EddyLib"))
+            {
+                AssetDatabase.CreateFolder("Assets/Resources", "EddyLib");
+            }
+
             settings = CreateInstance<GameSettingsSystemSettings>();
-            settings.defaultGameSettingsPath = DEFAULT_GAME_SETTINGS_PATH;
+            settings.defaultGameSettingsResourcesPath = DEFAULT_GAME_SETTINGS_PATH;
             AssetDatabase.CreateAsset(settings, SETTINGS_ASSETS_PATH);
             AssetDatabase.SaveAssets();
         }

@@ -17,12 +17,9 @@ public static class GameSettings
                 GameSettingsSystemSettings settings = Resources.Load<GameSettingsSystemSettings>(GameSettingsSystemSettings.SETTINGS_ASSETS_PATH);
 
                 if(settings != null)
-                    defaultGameSettings = Resources.Load<GameSettingsSO>(settings.DefaultGameSettingsPath);
+                    defaultGameSettings = Resources.Load<GameSettingsSO>(settings.DefaultGameSettingsResourcesPath);
                 else
-                {
-                    Debug.LogError("Game Settings System settings not found.");
-                    return null;
-                }
+                    throw new System.Exception("No GameSettingsSystemSettings asset found.");
             }
             
             return defaultGameSettings;
