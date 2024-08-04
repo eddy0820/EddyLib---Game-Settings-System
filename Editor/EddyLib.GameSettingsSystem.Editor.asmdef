@@ -1,0 +1,14 @@
+{
+    "name": "EddyLib.GameSettingsSystem.Editor",
+    "rootNamespace": "EddyLib.GameSettingsSystem.Editor",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
