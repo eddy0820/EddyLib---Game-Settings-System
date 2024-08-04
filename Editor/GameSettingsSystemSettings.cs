@@ -6,9 +6,9 @@ namespace EddyLib.GameSettingsSystem.Editor
 
 public class GameSettingsSystemSettings : ScriptableObject
 {
-    public const string SETTINGS_ASSETS_PATH = "Assets/Resources/EddyLib.GameSettingsSystem.asset";
+    public const string SETTINGS_ASSETS_PATH = "Assets/Resources/EddyLib/EddyLib.GameSettingsSystem.asset";
 
-    const string DEFAULT_GAME_SETTINGS_PATH = "Assets/EddyLib/Game Settings System/Resources/DefaultGameSettings";
+    const string DEFAULT_GAME_SETTINGS_PATH = "Assets/Resources/DefaultGameSettings";
 
     [SerializeField] string defaultGameSettingsPath;
     public string DefaultGameSettingsPath => defaultGameSettingsPath;

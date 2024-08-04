@@ -9,7 +9,7 @@ public class GameSettingsSystemSettingsProvider : SettingsProvider
 {
     SerializedObject gameSettingsSystemSettings;
 
-    const string SETTINGS_ASSETS_PATH = "Assets/Resources/EddyLib.GameSettingsSystem.asset";
+    const string SETTINGS_ASSETS_PATH = "Assets/Resources/EddyLib/EddyLib.GameSettingsSystem.asset";
 
     public GameSettingsSystemSettingsProvider(string path, SettingsScope scope = SettingsScope.Project) : base(path, scope) {}
 
