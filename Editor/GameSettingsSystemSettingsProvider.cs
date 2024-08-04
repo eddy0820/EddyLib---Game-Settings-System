@@ -25,7 +25,7 @@ public class GameSettingsSystemSettingsProvider : SettingsProvider
 
     public override void OnGUI(string searchContext)
     {
-        EditorGUILayout.PropertyField(gameSettingsSystemSettings.FindProperty("defaultGameSettingsPath"));
+        EditorGUILayout.PropertyField(gameSettingsSystemSettings.FindProperty("defaultGameSettingsResourcesPath"));
         gameSettingsSystemSettings.ApplyModifiedPropertiesWithoutUndo();
     }
 
