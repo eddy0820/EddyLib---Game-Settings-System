@@ -12,6 +12,14 @@ public class SceneSettings : MonoBehaviour
     {
         return defaultGameplaySettings.GetSettings<T>();
     }
+
+    public void SetSettings(GameSettingsSO settings)
+    {
+        if(settings == null)
+            return;
+        
+        defaultGameplaySettings = settings;
+    }
 }
 
 }

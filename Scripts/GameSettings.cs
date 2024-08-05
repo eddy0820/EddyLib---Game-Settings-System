@@ -1,4 +1,3 @@
-using EddyLib.GameSettingsSystem.Editor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,14 +12,7 @@ public static class GameSettings
         get
         {
             if(defaultGameSettings == null)
-            {
-                GameSettingsSystemSettings settings = Resources.Load<GameSettingsSystemSettings>(GameSettingsSystemSettings.SETTINGS_ASSETS_RESOURCES_PATH);
-
-                if(settings != null)
-                    defaultGameSettings = Resources.Load<GameSettingsSO>(settings.DefaultGameSettingsResourcesPath);
-                else
-                    throw new System.Exception("No GameSettingsSystemSettings asset found.");
-            }
+                defaultGameSettings = GameSettingsSystemSettingsLocator.LocateDefaultGameSettings();
             
             return defaultGameSettings;
         }

@@ -1,9 +1,8 @@
 {
-    "name": "EddyLib.GameSettingsSystem.Editor",
-    "rootNamespace": "EddyLib.GameSettingsSystem.Editor",
+    "name": "EddyLib.GameSettingsSystem",
+    "rootNamespace": "EddyLib.GameSettingsSystem",
     "references": [
-        "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
-        "GUID:e21d32b8e9601864eaf56394ed5a122b"
+        "GUID:776d03a35f1b52c4a9aed9f56d7b4229"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
