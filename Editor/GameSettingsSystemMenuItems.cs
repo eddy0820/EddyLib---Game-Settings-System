@@ -1,6 +1,5 @@
-using UnityEngine;
 using UnityEditor;
-using UnityEditor.SceneManagement;
+using EddyLib.Util.Editor;
 
 namespace EddyLib.GameSettingsSystem.Editor
 {
@@ -15,16 +14,7 @@ public static class GameSettingsSystemMenuItems
         SceneSettings sceneSettingsComponent = sceneSettings.GetComponent<SceneSettings>();
         sceneSettingsComponent.SetSettings(GameSettingsSystemSettingsLocator.LocateDefaultGameSettings());
 
-        SceneView lastView = SceneView.lastActiveSceneView;
-        sceneSettings.transform.position = lastView ? lastView.pivot : Vector3.zero;
-        
-        StageUtility.PlaceGameObjectInCurrentStage(sceneSettings);
-        GameObjectUtility.EnsureUniqueNameForSibling(sceneSettings);
-
-        Undo.RegisterCreatedObjectUndo(sceneSettings, $"Create Object: {sceneSettings.name}");  
-        Selection.activeGameObject = sceneSettings;
-
-        EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
+        CreateUtil.PlaceObjectInScene(sceneSettings);
     }
 }
 
