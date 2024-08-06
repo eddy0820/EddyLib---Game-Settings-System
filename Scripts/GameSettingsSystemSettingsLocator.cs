@@ -9,7 +9,7 @@ public static class GameSettingsSystemSettingsLocator
 {
     const string SETTINGS_ASSETS_RESOURCES_PATH = "EddyLib/EddyLib.GameSettingsSystem";
 
-    private static GameSettingsSystemSettings LocateGameSettingsSystemSettings()
+    public static GameSettingsSystemSettings LocateGameSettingsSystemSettings()
     {
         GameSettingsSystemSettings settings = Resources.Load<GameSettingsSystemSettings>(SETTINGS_ASSETS_RESOURCES_PATH);
 
@@ -21,10 +21,11 @@ public static class GameSettingsSystemSettingsLocator
 
     public static GameSettingsSO LocateDefaultGameSettings()
     {
-        GameSettingsSO defaultGameSettings = Resources.Load<GameSettingsSO>(LocateGameSettingsSystemSettings().DefaultGameSettingsResourcesPath);
+        GameSettingsSystemSettings settings = LocateGameSettingsSystemSettings();
+        GameSettingsSO defaultGameSettings = Resources.Load<GameSettingsSO>(settings.DefaultGameSettingsResourcesPath);
 
         if(defaultGameSettings == null)
-            throw new System.Exception("No GameSettingsSO asset found at path: Asset/Resources/" + LocateGameSettingsSystemSettings().DefaultGameSettingsResourcesPath);
+            throw new System.Exception("No GameSettingsSO asset found at path: Asset/Resources/" + settings.DefaultGameSettingsResourcesPath);
 
         return defaultGameSettings;
     }
