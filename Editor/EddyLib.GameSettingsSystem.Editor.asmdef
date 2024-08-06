@@ -3,7 +3,8 @@
     "rootNamespace": "EddyLib.GameSettingsSystem.Editor",
     "references": [
         "GUID:776d03a35f1b52c4a9aed9f56d7b4229",
-        "GUID:e21d32b8e9601864eaf56394ed5a122b"
+        "GUID:e21d32b8e9601864eaf56394ed5a122b",
+        "GUID:e024ea3fd213b8d47ab800c431f0642c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
